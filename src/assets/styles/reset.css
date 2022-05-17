@@ -1,0 +1,164 @@
+@charset "UTF-8";
+/*
+ * Otherwise if a <li> element appears outside of an <ol> or <ul> parent, for
+ * whatever reason, browsers will automatically add a bullet to it.
+ */
+.reset-tail {
+  /*
+   * Otherwise browsers will automatically set the font family to monospace, which
+   * might not be a part of your brand’s style guide.
+   */
+  /*
+   * Otherwise browsers will automatically set the font weight to bold, which
+   * might not be a part of your brand’s style guide. For example, you might use
+   * medium (500) or semibold (600) instead of bold (700) in your brand style
+   * guide and without this you may not catch it.
+   */
+  /*
+   * Otherwise browsers will automatically make these italic.
+   */
+  /*
+   * Otherwise browers will automatically add a line through or underline.
+   */
+  /*
+   * Otherwise browsers will automatically reset the text color to stark black and
+   * add a yellow background.
+   */
+  /*
+   * Add double curly quotes around <q> elements and intelligently apply single
+   * curly quotes to quotes within quotes.
+   */
+  /*
+   * Otherwise browsers will automatically reduce the font-size to 80-85%, which
+   * might not be a part of your brand’s type scale.
+   */
+  /*
+   * Otherwise SVGs without a fill specified will just show up as stark black,
+   * which might not be a part of your brand’s color palette.
+   */
+  /*
+   * Otherwise browsers will automatically center the text.
+   */
+  /*
+   * Otherwise browsers will automatically set the font weight to bold, which
+   * might not be a part of your brand’s font weight scale.
+   */
+  /*
+   * Otherwise browsers will automatically add 2px of spacing between table
+   * elements, which may break your spacing scale.
+   */
+  /*
+   * Otherwise browsers will automatically round corners and center the text.
+   */
+  /*
+   * Otherwise browsers will automatically center the text, but forget to add a
+   * pointer on hover.
+   */
+  /*
+   * Otherwise the color will be set by a previous declaration in preflight, which
+   * might not be a part of your brand’s color palette, and the opacity will be
+   * reduced too much for readability.
+   */
+}
+.reset-tail p {
+  text-align: initial;
+}
+.reset-tail h1, .reset-tail h2, .reset-tail h3, .reset-tail h4, .reset-tail h5 {
+  text-align: initial;
+}
+.reset-tail li {
+  list-style-type: initial;
+}
+.reset-tail ol li,
+.reset-tail ul li {
+  list-style-type: inherit;
+}
+.reset-tail code,
+.reset-tail pre,
+.reset-tail kbd,
+.reset-tail samp {
+  font-family: inherit;
+}
+.reset-tail b,
+.reset-tail strong {
+  font-weight: inherit;
+}
+.reset-tail address,
+.reset-tail cite,
+.reset-tail dfn,
+.reset-tail em,
+.reset-tail i,
+.reset-tail var {
+  font-style: inherit;
+}
+.reset-tail del,
+.reset-tail ins,
+.reset-tail s,
+.reset-tail u {
+  text-decoration: none;
+}
+.reset-tail mark {
+  background-color: transparent;
+  color: inherit;
+}
+.reset-tail q {
+  quotes: "“" "”" "‘" "’";
+  text-align: left;
+}
+.reset-tail q::before {
+  content: open-quote;
+}
+.reset-tail q::after {
+  content: close-quote;
+}
+.reset-tail small,
+.reset-tail sub,
+.reset-tail sup {
+  font-size: inherit;
+}
+.reset-tail svg:not([fill]) {
+  fill: currentColor;
+}
+.reset-tail caption,
+.reset-tail th {
+  text-align: inherit;
+}
+.reset-tail th {
+  font-weight: inherit;
+}
+.reset-tail table {
+  border-spacing: 0;
+}
+.reset-tail button {
+  border-radius: 0;
+  font-weight: inherit;
+  text-align: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+}
+.reset-tail select {
+  text-transform: inherit;
+}
+.reset-tail input[type=button],
+.reset-tail input[type=reset],
+.reset-tail input[type=submit] {
+  text-align: inherit;
+  cursor: pointer;
+}
+.reset-tail button:focus,
+.reset-tail input[type=button]:focus,
+.reset-tail input[type=reset]:focus,
+.reset-tail input[type=submit]:focus {
+  outline: 0;
+}
+.reset-tail input::placeholder,
+.reset-tail textarea::placeholder {
+  color: inherit;
+  opacity: 0.75;
+}
+.reset-tail script,
+.reset-tail [hidden] {
+  display: none !important;
+}
+
+/*# sourceMappingURL=reset.css.map */
