@@ -1,10 +1,11 @@
 <template>
-admin
+post <br>
+  <router-view></router-view>
 </template>
 
 <script>
 export default {
-  name: "AdminPage"
+  name: "post-item"
 }
 </script>
 

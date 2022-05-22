@@ -6,7 +6,7 @@ export const API = {
         refreshToken: "/author/token/refresh/"
     },
     blog:{
-        getList:"/blog/allPosts/",
+        getList:"/blog/posts/",
         getOne:"/blog/post/"
     }
 }

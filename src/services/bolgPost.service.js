@@ -1,10 +1,11 @@
 import {API} from "@/services/api.constant";
 import axios from "axios";
 import toast from "@/services/utils/toast.service";
+import axiosInstance from "@/services/utils/axiosInstance";
 
 const blogPostService = {
     getList:  function () {
-       return axios.get(API.baseUrl+API.blog.getList).then(response=>{
+       return axiosInstance.get(API.baseUrl+API.blog.getList).then(response=>{
            return response.data
         }).catch((errorResponse) => toast.error(errorResponse));
     },
