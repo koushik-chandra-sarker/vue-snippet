@@ -19,6 +19,7 @@
           :disable="node.disable"
           :depth="depth + 1"
           :key="node.name"
+          :parent="parent"
       >
       </tree-menu>
     </div>
@@ -43,6 +44,7 @@
           :disable="node.disable"
           :depth="depth + 1"
           :key="node.name"
+          :parent="parent"
       >
       </tree-menu>
     </div>
@@ -52,7 +54,7 @@
 <script>
 export default {
   name: "tree-menu",
-  props: ['name', 'path', 'icon', 'active', 'permitted', 'disable', 'nodes', 'depth'],
+  props: ['name', 'path', 'icon', 'active', 'permitted', 'disable', 'nodes', 'depth','parent'],
   data() {
     return{
       showChildren:this.active,
@@ -81,9 +83,7 @@ export default {
   methods: {
     toggleChildren() {
       this.showChildren = !this.showChildren;
-    },
-    closeMenu(path) {
-     this.closeOtherMenu(path)
+      console.log(this.parent)
     }
   }
 }

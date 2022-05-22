@@ -11,7 +11,7 @@
           :disable="item.disable"
           :depth="0"
           :key="item.name"
-          :closeOtherMenu="closeOtherMenu"
+          :parent="item.name"
       ></tree-menu>
     </div>
   </aside>
@@ -52,10 +52,7 @@ export default {
           } else return false
         })
       }
-    },
-    closeOtherMenu(path) {
-      console.log(path)
-    },
+    }
   },
   mounted() {
 
