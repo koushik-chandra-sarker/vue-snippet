@@ -1,6 +1,5 @@
 import {createStore} from "vuex";
 import auth from "./auth.module";
-import sidebarItem from "@/store/sidebarItem.module";
 
 export default createStore({
     state     : {},
@@ -8,6 +7,5 @@ export default createStore({
     actions   : {},
     modules   : {
         auth,
-        sidebar: sidebarItem
     },
 });

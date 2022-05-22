@@ -1,5 +1,5 @@
 <template>
-<!--  <aside class=" aside h-full flex flex-col space-y-10 items-left p-5 relative bg-gray-800 text-white text-left w-52">
+  <aside class=" aside h-full flex flex-col space-y-10 items-left p-5 relative bg-gray-800 text-white text-left w-52">
     <div v-for="item in getPermittedMenus" :key="item.name" class="flex flex-col">
       <tree-menu
           :name="item.name"
@@ -14,29 +14,13 @@
           :closeOtherMenu="closeOtherMenu"
       ></tree-menu>
     </div>
-  </aside>-->
-  <aside class=" aside h-full flex flex-col space-y-10 items-left p-5 relative bg-gray-800 text-white text-left w-52">
-    <div v-for="item in sidebarMenu" :key="item.name" class="flex flex-col">
-      <tree-menu
-          :name="item.name"
-          :nodes="item.child"
-          :path="item.path"
-          :icon="item.icon"
-          :active="item.active"
-          :permitted="item.permitted"
-          :disable="item.disable"
-          :depth="0"
-          :key="item.name"
-      ></tree-menu>
-    </div>
   </aside>
 </template>
 
 <script>
-// import {isPermittedToAccess} from "@/services/utils/permission.service";
-// import {sidebarMenu} from "@/view/layout/sidebar/menuItems";
+import {isPermittedToAccess} from "@/services/utils/permission.service";
+import {sidebarMenu} from "@/view/layout/sidebar/menuItems";
 import TreeMenu from "@/view/layout/sidebar/TreeMenu";
-import {mapGetters} from "vuex";
 
 export default {
   name: "aside-menu",
@@ -45,7 +29,7 @@ export default {
     return {}
   },
   methods: {
-/*    isPermittedToAccess,
+    isPermittedToAccess,
     setPermissionToMenuAndChild(node) {
       if (isPermittedToAccess(node.name)) {
         node.permitted = true
@@ -71,19 +55,18 @@ export default {
     },
     closeOtherMenu(path) {
       console.log(path)
-    },*/
+    },
   },
   mounted() {
 
   },
   computed: {
-    ...mapGetters(["sidebarMenu"]),
-  /*  getPermittedMenus() {
+    getPermittedMenus() {
       sidebarMenu.forEach(node => {
         this.setPermissionToMenuAndChild(node)
       });
       return sidebarMenu
-    },*/
+    },
   }
 }
 </script>

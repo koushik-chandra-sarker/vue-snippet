@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div v-if="hasPermittedChild">
     <div class="tree-menu" v-if="permitted">
       <div class="label-wrapper" @click="toggleChildren">
         <div :style="indent" :class="labelClasses" class="text-left">
-          <i class="fa" :class="iconClasses"></i>
+          <i v-if="hasPermittedChild" class="fa" :class="iconClasses"></i>
           {{ name }}
         </div>
       </div>
@@ -23,7 +23,6 @@
       </tree-menu>
     </div>
   </div>
-<!--
   <router-link v-else :to="path" >
     <div class="tree-menu" v-if="permitted">
       <div class="label-wrapper" @click="toggleChildren">
@@ -47,7 +46,7 @@
       >
       </tree-menu>
     </div>
-  </router-link>-->
+  </router-link>
 </template>
 
 <script>
@@ -83,9 +82,9 @@ export default {
     toggleChildren() {
       this.showChildren = !this.showChildren;
     },
-    // closeMenu(path) {
-    //  this.closeOtherMenu(path)
-    // }
+    closeMenu(path) {
+     this.closeOtherMenu(path)
+    }
   }
 }
 </script>
