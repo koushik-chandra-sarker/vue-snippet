@@ -8,7 +8,7 @@
         </div>
       </div>
       <tree-menu
-          v-show="showChildren"
+          v-show="active"
           v-for="node in nodes"
           :nodes="node.child"
           :name="node.name"
@@ -19,7 +19,9 @@
           :disable="node.disable"
           :depth="depth + 1"
           :key="node.name"
-          :parent="parent"
+          :closeEvent="closeEvent"
+          :parent="node"
+          :grandParent="grandParent"
       >
       </tree-menu>
     </div>
@@ -33,7 +35,7 @@
         </div>
       </div>
       <tree-menu
-          v-show="showChildren"
+          v-show="active"
           v-for="node in nodes"
           :nodes="node.child"
           :name="node.name"
@@ -44,7 +46,9 @@
           :disable="node.disable"
           :depth="depth + 1"
           :key="node.name"
-          :parent="parent"
+          :closeEvent="closeEvent"
+          :parent="parent.name"
+          :grandParent="grandParent"
       >
       </tree-menu>
     </div>
@@ -54,7 +58,7 @@
 <script>
 export default {
   name: "tree-menu",
-  props: ['name', 'path', 'icon', 'active', 'permitted', 'disable', 'nodes', 'depth','parent'],
+  props: ['name', 'path', 'icon', 'active', 'permitted', 'disable', 'nodes', 'depth','closeEvent', 'grandParent', "parent"],
   data() {
     return{
       showChildren:this.active,
@@ -66,8 +70,8 @@ export default {
   computed: {
     iconClasses() {
       return {
-        'fa-solid fa-plus': !this.showChildren,
-        'fa-solid fa-minus': this.showChildren
+        'fa-solid fa-plus': !this.active,
+        'fa-solid fa-minus': this.active
       }
     },
     labelClasses() {
@@ -82,8 +86,8 @@ export default {
   },
   methods: {
     toggleChildren() {
-      this.showChildren = !this.showChildren;
-      console.log(this.parent)
+      // this.showChildren = !this.showChildren;
+      this.closeEvent(this.grandParent, this.parent, this.name)
     }
   }
 }
